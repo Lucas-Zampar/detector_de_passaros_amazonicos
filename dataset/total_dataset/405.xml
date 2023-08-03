@@ -1,0 +1,27 @@
+<?xml version="1.0" ?><annotation>
+	<folder/>
+	<filename>405.jpg</filename>
+	<path>405.jpg</path>
+	<source>
+		<database>roboflow.ai</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sanhaco_do_coqueiro</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>678</xmin>
+			<xmax>824</xmax>
+			<ymin>169</ymin>
+			<ymax>331</ymax>
+		</bndbox>
+	</object>
+</annotation>

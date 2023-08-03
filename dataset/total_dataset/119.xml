@@ -1,0 +1,27 @@
+<?xml version="1.0" ?><annotation>
+	<folder/>
+	<filename>119.jpg</filename>
+	<path>119.jpg</path>
+	<source>
+		<database>roboflow.ai</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rolinha</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>550</xmin>
+			<xmax>706</xmax>
+			<ymin>243</ymin>
+			<ymax>457</ymax>
+		</bndbox>
+	</object>
+</annotation>

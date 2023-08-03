@@ -1,0 +1,27 @@
+<?xml version="1.0" ?><annotation>
+	<folder/>
+	<filename>900.jpg</filename>
+	<path>900.jpg</path>
+	<source>
+		<database>roboflow.ai</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sanhaco_da_amazonia</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<occluded>0</occluded>
+		<bndbox>
+			<xmin>195</xmin>
+			<xmax>351</xmax>
+			<ymin>151</ymin>
+			<ymax>371</ymax>
+		</bndbox>
+	</object>
+</annotation>
