@@ -14,12 +14,16 @@ De modo a capturar as imagens dos pássaros, o estudo teve acesso ao comedouro d
 
 ![comedouro](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e)
 
-Três webcams Logitech C270 HD foram instaladas no comedouro para registrar os pássaros se alimentando. As webcams eram conectadas a um notebook que executava um [script para capturar as gravações]() com auxílio da biblioteca OpenCV. 
+Três webcams Logitech C270 HD foram instaladas no comedouro para registrar os pássaros se alimentando. As webcams eram conectadas a um notebook que executava um [script para capturar as gravações](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py) com auxílio da biblioteca OpenCV. O esquema geral de aquisição dos dados é exposto abaixo:
+
+![aquisicao_de_dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06)
+
+As gravações foram realizadas entre os dias 07/09/2022 e 15/07/2022. A gravações entre os dias 07 e 13 passaram por um processo de recorte manual no qual momentos com ausência de pássaros foram descartados. Os recortes foram organizados com base na data de gravação e na espécie predominante. A partir desses recortes, _frames_ foram extraídos para comporem as imagens do conjunto de dados. De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, era possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podiam ser selecionados aleatoriamente ou em momentos específicos. A interface da aplicação é demonstrada abaixo: 
+
+https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/14bfcd74-aeaf-4e74-af2d-126b0d6afde2
 
 
-![20230330_163237](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a2c27c3d-3066-41e2-84aa-8bb1620733e1)
 
-Três webcams foram instaladas no comedouro para registrar os pássaros se alimentando. 
 
 
 
