@@ -8,6 +8,31 @@ https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/
 
 Infelizmente, não foi possível armazenar todos os arquivos neste repositório. Porém, eles estão publicamente disponíveis [no repositório completo compartilhado pelo Google Drive](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link).
 
+# Proposta 
+
+De modo a capturar as imagens dos pássaros, o estudo teve acesso ao comedouro de uma residência no estado do Amapá. Os moradores locais utilizam o comedouro para observar os pássaros se alimentando das sementes e frutas que ali colocam. O comedouro pode ser visualizado abaixo:
+
+![comedouro](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e)
+
+Três webcams Logitech C270 HD foram instaladas no comedouro para registrar os pássaros se alimentando. As webcams eram conectadas a um notebook que executava um [script para capturar as gravações]() com auxílio da biblioteca OpenCV. 
+
+
+![20230330_163237](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a2c27c3d-3066-41e2-84aa-8bb1620733e1)
+
+Três webcams foram instaladas no comedouro para registrar os pássaros se alimentando. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Estrutura do Repositório
 
 A estrutura deste repositório está organizada da seguinte forma: 
