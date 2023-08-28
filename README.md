@@ -2,7 +2,7 @@
 
 Neste repositório, você encontrará a implementação do meu trabalho de conclusão de curso (TCC).  
 
-O trabalho teve como  objetivo detectar espécies de pássaros amazônicos que frequentam comedouros residenciais através de uma abordagem baseada em Deep Learning. Para tanto, foi levantado um conjunto de 940 imagens anotadas para a tarefa de detecção de objetos. Em seguida, a base de dados foi empregada para treinar diferentes configurações do modelo Faster R-CNN através do _framework_ [IceVision](https://github.com/airctic/icevision). Abaixo, é possível verificar a aplicação do modelo selecionado: 
+O trabalho teve como  objetivo detectar espécies de pássaros amazônicos que frequentam comedouros residenciais através de uma abordagem baseada em Deep Learning. Para tanto, foi levantado um conjunto de 940 imagens anotadas para a tarefa de detecção de objetos. Em seguida, a base de dados foi empregada para treinar diferentes configurações do modelo Faster R-CNN através. Abaixo, é possível verificar a aplicação do modelo selecionado: 
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/e58b7a8e-edac-4e0e-ad77-226130b5126d
 
@@ -34,6 +34,27 @@ As espécies dos pássaros foram determinadas por meio de consultas realizadas n
 ![total_proportion](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f42e5a3e-6c5f-43f4-a7ac-c95327cf5c6d)
 
 ## Treinamento 
+
+Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o Faster R-CNN que recai na categoria de detectores de dois estágio. Nessa categoria, o modelo propõe primeiro regiões com possíveis objetos denominadas de RoI (Region of Interst). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágio tendem a ser mais precisos, porém ao custo de um tempo de inferência maior. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiro detectores bem-sucedidos a empregar redes neurais convolucionais. 
+
+
+
+
+
+ 
+
+_framework_ [IceVision](https://github.com/airctic/icevision)
+
+
+
+- __Fase preliminar__: 30% dos dados levantados foram reservados em um novo conjunto denominado de parcial. O conjunto parcial foi empregado para treinar diferentes configurações do modelo Faster R-CNN
+- __Fase final__:
+
+
+### Fase preliminar
+
+### Fase final
+
 
 
 
