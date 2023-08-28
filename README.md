@@ -26,11 +26,10 @@ De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
+Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) que conta com ferramentas de anotação de imagens para tarefas de visão compuatacional. Nesse contexto, o processo de anotação ocorreu ao se desenhar as _bounding boxes_ (caixas delimitadoras) sobre os pássaros a fim de localizá-los. Além disso, foi especificada a espécie de cada pássaro de modo a classificá-los.  
 
-Após a extração dos _frames_, seguiu-se para a etapa de anotação. Para tanto, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/). O processo de anotação ocorreu ao se desenhar caixas delimitadoras sobre os pássaros, além de especificar suas respectivas espécies. As espécies foram determinadas ao se consultar registros encontrados nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home).  
 
-Com isso, foi possível levantar um [conjnunto de dados disponibilizado publicamente](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset) que é composto por 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada abaixo:
-
+As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de canário-do-amazonas, chupim, rolinha, sanhaço-do-coqueiro e sanhaço-da-amazônia. Com isso, foi possível levantar e disponibilizar publicamente um [conjnunto de dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset) composto por 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada abaixo:
 
 ![total_proportion](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f42e5a3e-6c5f-43f4-a7ac-c95327cf5c6d)
 
