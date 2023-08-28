@@ -1,6 +1,8 @@
 # Detecção de Pássaros Amazônicos (TCC)
 
-Neste repositório, você encontrará os códigos empregados no meu Trabalho de Conclusão de Curso (TCC). Nele, houve o treinamento de um modelo de deep learning chamado Faster R-CNN na tarefa detecar espécies de pássaros que frequentam um comedouro residencial. Para tanto, um conjunto de dados de imagens anotadas foram obtidas a parir de 3 webcams. 
+Neste repositório, você encontrará a implementação do meu trabalho de conclusão de curso (TCC).  
+
+O trabalho teve como  objetivo detectar espécies de pássaros amazônicos que frequentam comedouros residenciais através de uma abordagem baseada em Deep Learning. Para tanto, foi levantado um conjunto de 940 imagens anotadas para a tarefa de detecção de objetos. Em seguida, a base de dados foi empregada para treinar diferentes configurações do modelo Faster R-CNN através do _framework_ [IceVision](https://github.com/airctic/icevision). Abaixo, é possível verificar a aplicação do modelo selecionado: 
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/e58b7a8e-edac-4e0e-ad77-226130b5126d
 
