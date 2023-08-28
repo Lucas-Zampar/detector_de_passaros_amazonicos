@@ -20,7 +20,9 @@ Três webcams Logitech C270 HD foram instaladas no comedouro para registrar os p
 
 ![aquisicao_de_dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06)
 
-As gravações foram realizadas entre os dias 07/09/2022 e 15/07/2022. A gravações entre os dias 07 e 13 passaram por um processo de recorte manual no qual momentos com ausência de pássaros foram descartados. Os recortes foram organizados com base na data de gravação e na espécie predominante. A partir desses recortes, _frames_ foram extraídos para comporem as imagens do conjunto de dados. De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, era possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podiam ser selecionados aleatoriamente ou em momentos específicos. A interface da aplicação é demonstrada abaixo: 
+As gravações foram realizadas entre os dias 07/09/2022 e 15/07/2022. A gravações entre os dias 07 e 13 passaram por um processo de recorte manual no qual momentos com ausência de pássaros foram descartados. Os recortes foram organizados com base na data de gravação e na espécie predominante. A partir desses recortes, _frames_ foram extraídos para comporem as imagens do conjunto de dados. 
+
+De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, era possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podiam ser selecionados aleatoriamente ou em momentos específicos. A interface da aplicação é demonstrada abaixo: 
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
