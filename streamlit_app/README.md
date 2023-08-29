@@ -9,8 +9,6 @@ Abaixo, há um vídeo demonstrando a utilização da interface:
 
 # Conteúdo
 
-Nesta página, você encontrará:
-
 ## Arquivos
 
 - __app_utils.py__: código auxiliar para acessar e salvar os frames.
