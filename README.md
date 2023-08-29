@@ -1,3 +1,6 @@
+![236798_Happy birds eating seeds inside a feeder_xl-1024-v1-0](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/c013a8ef-cc74-4e82-952f-275716ea295b)
+
+
 # Detecção de Pássaros Amazônicos (TCC)
 
 Neste repositório, você encontrará a implementação do meu trabalho de conclusão de curso (TCC).  
