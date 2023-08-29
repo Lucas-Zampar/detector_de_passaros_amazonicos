@@ -35,24 +35,30 @@ As espécies dos pássaros foram determinadas por meio de consultas realizadas n
 
 ## Treinamento 
 
-Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o __Faster R-CNN__ que recai na categoria de detectores de dois estágio. Nessa categoria, o modelo propõe primeiro regiões com possíveis objetos denominadas de RoI (Region of Interst). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágio tendem a ser mais precisos, porém ao custo de um tempo de inferência maior. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiro detectores bem-sucedidos a empregar redes neurais convolucionais. 
+Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o __Faster R-CNN__ que recai na categoria de detectores de dois estágio. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágio tendem a ser mais precisos, porém ao custo de um tempo de inferência maior. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiro detectores bem-sucedidos a empregar redes neurais convolucionais. 
 
-O treina
+Durante o treinamento, foram utilizados dois conjuntos de dados: o  [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) e o __conjunto parcial__. O conjunto total representa todos os dados levantados, enquanto o conjunto parcial é composto por apenas 30% dos dados. Com isso, o treinamento foi dividido também em duas fases consecutivas denominadas respectivamente de __fase preliminar__ e __fase final__. A relação entre os conjuntos pode ser visualizada no diagrama abaixo:
 
-
-
-
-
- 
-
-
-
-
-- __Fase preliminar__: 30% dos dados levantados foram reservados em um novo conjunto denominado de parcial. O conjunto parcial foi empregado para treinar diferentes configurações do modelo Faster R-CNN
-- __Fase final__:
+![Conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7a)
 
 
 ### Fase preliminar
+
+Na fase preliminar, o conjunto de dados parcial foi empregado para experimentar diferentes configurações de treinamento para o modelo Faster R-CNN. Por exemplo, foram experimentados diferentes _backbones_ dos tipos ResNet e ResNext, sendo que os resultados 
+
+
+
+
+
+
+
+
+Essa decisão foi tomada a fim de verificar como o modelo se comportaria com uma porção menor de dados. Além disso, o modelo com a configuração de treinamento que mais se destacasse. 
+
+
+
+
+
 
 ### Fase final
 
