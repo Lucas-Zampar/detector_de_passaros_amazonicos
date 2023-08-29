@@ -24,7 +24,7 @@ No comedouro, foram instaladas três webcams Logitech C270 HD para registrar os 
 
 As gravações foram realizadas entre os dias 07/09/2022 e 13/07/2022. Em seguida, elas foram recortadas manualmente para remover momentos com ausência de pássaros. Os recortes realizados foram então organizados com base na data de gravação e na espécie predominante. Por fim, _frames_ foram extraídos dos recortes para compor as imagens do conjunto de dados. 
 
-De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, era possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podiam ser selecionados aleatoriamente ou em momentos específicos também. A interface da aplicação é demonstrada abaixo: 
+De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, é possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podem ser selecionados aleatoriamente ou em momentos específicos também. A interface da aplicação é demonstrada abaixo: 
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
