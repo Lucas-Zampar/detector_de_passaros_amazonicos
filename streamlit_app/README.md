@@ -1,13 +1,8 @@
 # Extração de Frames
 
-Após as gravações terem sido realizadas no comedouro por meio de webcams, cortes manuais foram realizados de modo a excluir períodos de ausência de pássaros. Além disso, eles foram organizados com base na espécie predominante, bem como na data de gravação. 
-
-Assim, foi desenvolvida uma aplicação em Streamlit capaz de selecionar frames a partir dos cortes realizados. Os frames podem ser selecionadas com base na espécie predominante e na data de gravação do corte. Além disso, a seleção pode ser aleatória ou em um momentos específicos do corte. 
-
-Abaixo, há um vídeo demonstrando a utilização da interface: 
-
-
 # Conteúdo
+
+Aqui, você vai encontrar:
 
 ## Arquivos
 
@@ -16,7 +11,7 @@ Abaixo, há um vídeo demonstrando a utilização da interface:
 
 ## Pastas
 
-- __cortes_por_especie__: pasta onde devem estar presentes os cortes. Devido a limitação de espaço, os cortes estão disponíveis no Google Drive clicando [aqui](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link).
+- __cortes_por_especie__: pasta onde devem estar presentes os cortes. Devido a limitação de espaço, os cortes estão disponíveis apenas [no repositório completo compartilhado pelo Google Drive](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link).
 - __local_dataset__: pasta onde os frames selecionados são salvos. 
 
 
