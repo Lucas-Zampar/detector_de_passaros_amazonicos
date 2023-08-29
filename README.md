@@ -35,32 +35,54 @@ As espécies dos pássaros foram determinadas por meio de consultas realizadas n
 
 ## Treinamento 
 
-Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o __Faster R-CNN__ que recai na categoria de detectores de dois estágio. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágio tendem a ser mais precisos, porém ao custo de um tempo de inferência maior. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiro detectores bem-sucedidos a empregar redes neurais convolucionais. 
+Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágio. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágio tendem a ser mais precisos, porém ao custo de um tempo de inferência maior. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiro detectores bem-sucedidos a empregar redes neurais convolucionais. 
 
-Durante o treinamento, foram utilizados dois conjuntos de dados: o  [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) e o __conjunto parcial__. O conjunto total representa todos os dados levantados, enquanto o conjunto parcial é composto por apenas 30% dos dados. Com isso, o treinamento foi dividido também em duas fases consecutivas denominadas respectivamente de __fase preliminar__ e __fase final__. A relação entre os conjuntos pode ser visualizada no diagrama abaixo:
+Neste trabalho, houve duas fases consecutivas de treinamento denominadas respectivamente de 
+
+- __fase preliminar__: na qual foi definida uma _baselina_, bem com uma configuração de treinamento ideal. 
+- __fase final__: um único modelo definitivo foi treinado com a configuração definida, sendo comparado com a _baseline_.
+
+Além disso, cada fase utilizou um conjunto de dados diferentes:
+
+- [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset): composto por 30% dos dados levantados (282 imagens e 560 anotações)
+- [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/total_dataset): composto pela totalidade dos dados levantados (940 imagens e 1.836 anotações)
+
+A relação entre os dois conjuntos pode ser visualizada no diagrama abaixo:
 
 ![Conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7a)
 
+Durante a fase preliminar, foram experimentadas diferentes configurações de treinamento utilizando o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset). Nesse contexto, a configuração que mais se destacou foi a seguinte:
 
-### Fase preliminar
+|  Hiperparâmetros                          | Valores                  |
+|-------------------------------------------|--------------------------|
+| Backbone                                  | ResNeXt101 32x4d FPN 1x  |
+| Número de epochs                          | 20                       |
+| Embaralhamento do conjunto de treinamento | Não                      |
+| Taxa de aprendizagem                      | 10-4                     |
+| Tamanho do batch                          | 1                        |
+| Tamanho da imagem                         | 896x896                  |
+| Tamanho de redimensionamento no presizing | 1024x1024                |
 
-Na fase preliminar, o conjunto de dados parcial foi empregado para experimentar diferentes configurações de treinamento para o modelo Faster R-CNN. Por exemplo, foram experimentados diferentes _backbones_ dos tipos ResNet e ResNext, sendo que os resultados 
-
-
-
-
-
-
-
-
-Essa decisão foi tomada a fim de verificar como o modelo se comportaria com uma porção menor de dados. Além disso, o modelo com a configuração de treinamento que mais se destacasse. 
-
-
+A partir disso, foi decido utilizar essa configuração para realizar o treinamento de dois modelos. O primeiro foi treinado com o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) a fim de definr uma _baseline_. Já o segundo, chamado de __definitivo__, foi treinado com [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7). A avaliação dos modelos foi realizada pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando o protocolo de avalaição do conjunto [COCO](https://cocodataset.org/#detection-eval).
 
 
 
 
-### Fase final
+
+A tabela abaixo compara os resultados alcançados pelos dois modelos:
+
+|       Modelo      |    mAP  | mAP@.50  | mAP@.75  |
+|:-----------------:|:-------:|:--------:|:--------:|
+| Baseline          | 0,7529  | 0,9459   | 0,8851   |
+| Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
+
+
+Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definii
+
+
+
+
+
 
 
 
