@@ -1,5 +1,5 @@
-![236798_Happy birds eating seeds inside a feeder_xl-1024-v1-0](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/c013a8ef-cc74-4e82-952f-275716ea295b)
 
+![236798_Happy birds eating seeds inside a feeder_xl-1024-v1-0 (1)](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/5d79e9f7-30e7-440b-855e-41657af449be)
 
 # Detecção de Pássaros Amazônicos (TCC)
 
