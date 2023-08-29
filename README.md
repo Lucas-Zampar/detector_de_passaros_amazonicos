@@ -44,7 +44,7 @@ Neste trabalho, houve duas fases consecutivas de treinamento denominadas respect
 - __fase preliminar__: na qual foi definida uma _baselina_, bem com uma configuração de treinamento ideal. 
 - __fase final__: um único modelo definitivo foi treinado com a configuração definida, sendo comparado com a _baseline_.
 
-Além disso, cada fase utilizou um conjunto de dados diferentes:
+Além disso, cada fase utilizou um conjunto de dados diferente:
 
 - [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset): composto por 30% dos dados levantados (282 imagens e 560 anotações)
 - [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/total_dataset): composto pela totalidade dos dados levantados (940 imagens e 1.836 anotações)
