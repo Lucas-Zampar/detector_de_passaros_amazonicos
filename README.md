@@ -9,7 +9,6 @@ O trabalho teve como  objetivo detectar espécies de pássaros amazônicos que f
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/e58b7a8e-edac-4e0e-ad77-226130b5126d
 
-Infelizmente, não foi possível armazenar todos os arquivos neste repositório. Porém, eles estão publicamente disponíveis [no repositório completo compartilhado pelo Google Drive](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link).
 
 # Proposta 
 
