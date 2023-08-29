@@ -28,7 +28,7 @@ De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
-Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) que conta com ferramentas de anotação de imagens para tarefas de visão compuatacional. Nesse contexto, o processo de anotação ocorreu ao se desenhar as _bounding boxes_ (caixas delimitadoras) sobre os pássaros a fim de localizá-los. Além disso, foi especificada a espécie de cada pássaro de modo a classificá-los.  
+Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) que conta com ferramentas de anotação de imagens para tarefas de visão compuatacional. Nesse contexto, o processo de anotação ocorreu ao se desenhar as _bounding boxes_ (caixas delimitadoras) sobre os pássaros a fim de localizá-los. Além disso, foram especificadas as espécies de cada pássaro de modo a classificá-los.  
 
 
 As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de canário-do-amazonas, chupim, rolinha, sanhaço-do-coqueiro e sanhaço-da-amazônia. Com isso, foi possível levantar e disponibilizar publicamente um [conjnunto de dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset) composto por 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada abaixo:
