@@ -63,11 +63,7 @@ Durante a fase preliminar, foram experimentadas diferentes configurações de tr
 | Tamanho da imagem                         | 896x896                  |
 | Tamanho de redimensionamento no presizing | 1024x1024                |
 
-A partir disso, foi decido utilizar essa configuração para realizar o treinamento de dois modelos. O primeiro foi treinado com o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) a fim de definr uma _baseline_. Já o segundo, chamado de __definitivo__, foi treinado com [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7). A avaliação dos modelos foi realizada pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando o protocolo de avalaição do conjunto [COCO](https://cocodataset.org/#detection-eval).
-
-
-
-
+A partir disso, foi decido utilizar essa configuração para realizar o treinamento de dois modelos. O primeiro foi treinado com o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) a fim de definr uma _baseline_. Já o segundo, chamado de __definitivo__, foi treinado com [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7). A avaliação dos modelos foi realizada pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando a métrica _mean Average Precision_ (mAP) conforme calculada pelo conjunto [COCO](https://cocodataset.org/#detection-eval).
 
 A tabela abaixo compara os resultados alcançados pelos dois modelos:
 
@@ -76,8 +72,8 @@ A tabela abaixo compara os resultados alcançados pelos dois modelos:
 | Baseline          | 0,7529  | 0,9459   | 0,8851   |
 | Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
 
+Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8.77%. Vale destacar que as demais métricas mAP@.50 e mAP@.75, que utilizam os _thresholds_ de IoU em 50% e 75% respectivamente, foram utilizadas como referência apenas. 
 
-Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definii
 
 
 
