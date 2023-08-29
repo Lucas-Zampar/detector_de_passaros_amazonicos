@@ -1,6 +1,6 @@
 # Conteúdo 
 
-Nesta página, você encontrará:
+Aqui, você encontrará:
 
 ## Arquivos 
 
@@ -10,6 +10,8 @@ Nesta página, você encontrará:
 - __train_model.ipynb__: notebook empregado para treinar e avaliar os modelos. 
 - __demo.jpg__: imagem demonstrativa para anotação.
 - __demo.mp4__: vídeo demonstrativa para anotação.
+
+__OBS__: os notebooks precisam dos _checkpoints_ dos modelos na pasta `../faster_rccnn/`. Por favor, realize o download por meio [do repositório completo compartilhado pelo Google Drive.](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link)
 
 
 ## Pastas
