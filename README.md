@@ -39,7 +39,7 @@ As espécies dos pássaros foram determinadas por meio de consultas realizadas n
 
 Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágios. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágios tendem a ser mais precisos. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiros detectores bem-sucedidos a empregar redes neurais convolucionais. 
 
-Neste trabalho, houve duas fases consecutivas de treinamento denominadas respectivamente de 
+Neste trabalho, houve duas fases consecutivas de treinamento denominadas respectivamente de:
 
 - __fase preliminar__: na qual foi definida uma _baselina_, bem com uma configuração de treinamento ideal. 
 - __fase final__: um único modelo definitivo foi treinado com a configuração definida, sendo comparado com a _baseline_.
