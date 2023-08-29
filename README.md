@@ -75,34 +75,3 @@ A tabela abaixo compara os resultados alcançados pelos dois modelos:
 Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8.77%. Vale destacar que as demais métricas mAP@.50 e mAP@.75, que utilizam os _thresholds_ de IoU em 50% e 75% respectivamente, foram utilizadas como referência apenas. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Estrutura do Repositório
-
-A estrutura deste repositório está organizada da seguinte forma: 
-
-- __codigos_de_desenvolvimento__: contem todos os códigos e notebooks utilizados para treinar e avaliar o modelo, bem como para anotar novas imagens e vídeos. 
-- __dataset__: contem o conjunto de dados utilizado para treinar o modelo. 
-- __faster_rcnn__: contem o checkpoint e metadados do modelo definitivo e dos intermediários produzidos durante o trabalho. 
-    - OBS: apenas o modelo definitivo está disponíveis no GitHub. Os demais se encontram [no repositório completo compartilhado pelo Google Drive](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link). 
-- __streamlit_app__: contem os códigos da interface gráfica empregada para extrair os frames a partir dos cortes realizados.
-    - OBS: os cortes não estão disponíveis no GitHub, apenas [no repositório completo compartilhado pelo Google Drive](https://drive.google.com/drive/folders/12ueqV4UuxU2ebdD4YYV4xpQZ3hxHhIk-?usp=drive_link).
-
