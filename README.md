@@ -23,22 +23,21 @@ Assim, esse projeto teve como objetivo geral levantar uma abordagem baseada em D
 
 ## Conjunto de Dados
 
-De modo a capturar as imagens dos pássaros, o estudo teve acesso ao comedouro de uma residência no estado do Amapá. O comedouro pode ser visualizado a seguir:
+O estudo teve acesso ao comedouro de uma residência no estado do Amapá que pode ser visualizado na figura abaixo. 
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e" alt="comedouro" height=60% width=60%>
 
-No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de registrar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações era feita por meio de um [script que empregou a biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py)
+No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações era feita por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="comedouro" height=60% width=60%>
 
-
-As gravações foram realizadas entre os dias 07/09/2022 e 13/07/2022. Em seguida, elas foram recortadas manualmente para remover momentos com ausência de pássaros. Os recortes realizados foram então organizados com base na data de gravação e na espécie predominante. Por fim, _frames_ foram extraídos dos recortes para compor as imagens do conjunto de dados. 
-
-De modo a facilitar a extração dos _frames_, foi desenvolvida uma [aplicação em streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app). Por meio dela, é possível navegar entre os recortes, além de filtrá-los pela data e pela espécie. Os _frames_ podem ser selecionados aleatoriamente ou em momentos específicos também. A interface da aplicação é demonstrada abaixo: 
+As imagens do conjunto de dados foram obtidas a partir de _frames_ extraídos dessas gravações. De modo a facilitar a extração, foi desenvolvida uma [aplicação em Streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app) demonstrada no vídeo abaixo. Por meio dela, é possível selecionar _frames_ aleatórios ou específicos das gravações, além de filtrá-las pela data e pela espécie predominante.
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
-Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) que conta com ferramentas de anotação de imagens para tarefas de visão compuatacional. Nesse contexto, o processo de anotação ocorreu ao se desenhar as _bounding boxes_ (caixas delimitadoras) sobre os pássaros a fim de localizá-los. Além disso, foram especificadas também as espécies de cada pássaro de modo a classificá-las.  
+Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) para serem anotados, processo que se consistiu em especificar as _bounding boxes_ e classes (espécies) de cada pássaro. 
+
+
 
 
 As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de canário-do-amazonas, chupim, rolinha, sanhaço-do-coqueiro e sanhaço-da-amazônia. Com isso, foi possível levantar e disponibilizar publicamente um [conjnunto de dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset) composto por 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada abaixo:
