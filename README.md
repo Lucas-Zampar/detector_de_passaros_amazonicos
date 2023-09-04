@@ -17,8 +17,7 @@ Assim, esse projeto teve como objetivo geral levantar uma abordagem baseada em D
 - Anotar as imagens levantadas para a tarefa de detecção de objetos;
 - Treinar e avaliar modelos de Deep Learning em diferentes configurações para detectar as espécies desses pássaros; 
 - Avaliar os modelos, selecionando o que mais se destacasse;
-
-
+  
 # Proposta 
 
 ## Conjunto de Dados
@@ -40,8 +39,6 @@ As espécies dos pássaros foram determinadas por meio de consultas realizadas n
 As imagens adquiridas foram anotadas por meio da plataforma [RoboFlow](https://roboflow.com/). Ao todo, foram levantadas 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada no gráfico abaixo. O conjunto de dados produzido pode ser encontrado na pasta [dataset](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset). 
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/278633e3-965a-4707-a144-de9da2c4d431" alt="esquema_gravacao" height=60% width=60%>
-
-
 
 ## Treinamento 
 
@@ -73,4 +70,29 @@ A avaliação foi conduzida pelo _framework_ [FiftyOne](https://github.com/voxel
 | Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
 
 Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%. Vale destacar também que ao se considerar o _thresold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
+
+
+
+|       Espécies       | Precisão Baseline | Precisão Modelo Definitivo  | Revocação Baseline  | Revocação Modelo Definitivo  |
+|:--------------------:|:-----------------:|:---------------------------:|:-------------------:|:----------------------------:|
+| canário-do-amazonas  |  0,9344           | 0,9515                      | 0,9828              | 0,9849                       |
+| chupim               |  0,9000           | 0,9725                      | 0,9231              | 1,0000                       |
+| rolinha              |  0,9643           | 0,9663                      | 1,0000              | 0,9773                       |
+| sanhaço-da-amazônia  |  0,8519           | 0,9877                      | 1,0000              | 1,0000                       |
+| sanhaço-do-coqueiro  |  0,8462           | 0,9200                      | 0,8800              | 0,9787                       |
+| Média                |  0,8993           | 0,9596                      | 0,9572              | 0,9882                       |
+
+
+
+# Conclusão 
+
+
+
+
+# Próximos Passos 
+
+
+# Estrutura do Projeto
+
+
 
