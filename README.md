@@ -1,26 +1,36 @@
 
 ![236798_Happy birds eating seeds inside a feeder_xl-1024-v1-0 (1)](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/5d79e9f7-30e7-440b-855e-41657af449be)
 
-# Detecção de Pássaros Amazônicos (TCC)
+# Detector de Pássaros Amazônicos (TCC)
 
-Neste repositório, você encontrará a implementação do meu trabalho de conclusão de curso (TCC).  
+Pássaros atraem a atenção humana por sua beleza e diversidade, o que estimula pessoas a obsersarvá-los como lazer. Nesse processo, é possível registrar pássaros em imagens e compartilhá-las em plataformas de ciência cidadã como [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Com isso, pessoas podem contribuir significativamente com pesquisas científicas que visam compreender e preservar espécies de pássaros. 
 
-O trabalho teve como  objetivo detectar espécies de pássaros amazônicos que frequentam comedouros residenciais através de uma abordagem baseada em Deep Learning. Para tanto, foi levantado um conjunto de 940 imagens anotadas para a tarefa de detecção de objetos. Em seguida, a base de dados foi empregada para treinar diferentes configurações do modelo Faster R-CNN através do _framework_ [IceVision](https://github.com/airctic/icevision). Abaixo, é possível verificar a aplicação do modelo produzido: 
+A região amazônica pode oferecer uma excelente experiência de observação de pássaros dada a diversidade de espécies existentes. Algumas delas se adaptaram inclusive ao meio urbano, sendo possível encontrar pássaros se alimentando até nos jardins de residências. Dessa forma, os moradores locais podem observar pássaros ao atraí-los por meio de alimentos colocados em comedouros abertos.
 
-https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/e58b7a8e-edac-4e0e-ad77-226130b5126d
+Nesse conexto, notou-se a oportunidade de empregar _webcams_ para registrar pássaros amazônicos se alimentando em comedouros residenciais. Além disso, questionou-se se não seria possível empregar inteligência artificial, através de modelos de Deep Learning, para detectar automaticamente as espécies dos pássaros registrados. 
+
+# Objetivos
+
+Assim, esse projeto teve como objetivo geral levantar uma abordagem baseada em Deep Learning para detectar automaticamente espécies de pássaros amazônicos a partir de um contexto residencial. Para tanto, 
+
+- Levantar um conjunto de imagens de pássaros que frequentam um comedouro residencial;
+- Anotar as imagens levantadas para a tarefa de detecção de objetos;
+- Treinar e avaliar modelos de Deep Learning em diferentes configurações para detectar as espécies desses pássaros; 
+- Avaliar os modelos, selecionando o que mais se destacasse;
 
 
 # Proposta 
 
 ## Conjunto de Dados
 
-De modo a capturar as imagens dos pássaros, o estudo teve acesso ao comedouro de uma residência no estado do Amapá. Os moradores locais utilizam o comedouro para observar os pássaros se alimentando das sementes e frutas ali colocadas. O comedouro pode ser visualizado a seguir:
+De modo a capturar as imagens dos pássaros, o estudo teve acesso ao comedouro de uma residência no estado do Amapá. O comedouro pode ser visualizado a seguir:
 
-![comedouro](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e)
+<img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e" alt="comedouro" height=60% width=60%>
 
-No comedouro, foram instaladas três webcams Logitech C270 HD para registrar os pássaros se alimentando. Elas eram conectadas a um notebook que ficava do lado do comedouro. Então, era executado um [script para capturar as gravações](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py) com auxílio da biblioteca OpenCV. O esquema geral de aquisição dos dados é exposto abaixo:
+No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de registrar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações era feita por meio de um [script que empregou a biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py)
 
-![aquisicao_de_dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06)
+<img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="comedouro" height=60% width=60%>
+
 
 As gravações foram realizadas entre os dias 07/09/2022 e 13/07/2022. Em seguida, elas foram recortadas manualmente para remover momentos com ausência de pássaros. Os recortes realizados foram então organizados com base na data de gravação e na espécie predominante. Por fim, _frames_ foram extraídos dos recortes para compor as imagens do conjunto de dados. 
 
