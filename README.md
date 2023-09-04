@@ -29,37 +29,30 @@ O estudo teve acesso ao comedouro de uma residência no estado do Amapá que pod
 
 No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações foi realizada por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
 
-<img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="comedouro" height=60% width=60%>
+<img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="esquema_gravacao" height=60% width=60%>
 
 As imagens do conjunto de dados foram obtidas a partir de _frames_ extraídos dessas gravações. De modo a facilitar a extração, foi desenvolvida uma [aplicação em Streamlit](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/streamlit_app) demonstrada no vídeo abaixo. Por meio dela, é possível selecionar _frames_ aleatórios ou específicos das gravações, além de filtrá-las pela data e pela espécie predominante.
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
-As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home), além de utilizar manuais de referência. Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de __canário-do-amazonas__, __chupim__, __rolinha__, __sanhaço-do-coqueiro__ e __sanhaço-da-amazônia__.
+As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de __canário-do-amazonas__, __chupim__, __rolinha__, __sanhaço-da-amazônia__ e __sanhaço-do-coqueiro__.
 
+As imagens adquiridas foram anotadas por meio da plataforma [RoboFlow](https://roboflow.com/). Ao todo, foram levantadas 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada no gráfico abaixo. O conjunto de dados produzido pode ser encontrado na pasta [dataset](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset). 
 
-Uma vez extraídos, os _frames_ foram anotados por meio da plataforma [RoboFlow](https://roboflow.com/). Ao todo, foram levantadas 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada no gráfico abaixo. O conjunto de dados produzido pode ser encontrado na pasta [dataset](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset). 
+<img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/278633e3-965a-4707-a144-de9da2c4d431" alt="esquema_gravacao" height=60% width=60%>
+
 
 
 ## Treinamento 
 
-Entre os modelos de deep learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágios. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágios tendem a ser mais precisos. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. Além disso, ele foi um dos primeiros detectores bem-sucedidos a empregar redes neurais convolucionais. 
+Entre os algoritmos de Deep Learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágios. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágios tendem a ser mais precisos. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. 
 
 Neste trabalho, houve duas fases consecutivas de treinamento denominadas respectivamente de:
 
-- __fase preliminar__: na qual foi definida uma _baselina_, bem com uma configuração de treinamento ideal. 
-- __fase final__: um único modelo definitivo foi treinado com a configuração definida, sendo comparado com a _baseline_.
+- __fase preliminar__: modelos foram treinados com uma porção menor de dados em diferentes configurações. Nesta fase, foi selecionada a configuração de treinamento do modelo que apresentou os melhores resultados. Esse modelo foi definido também como uma _baseline_. 
+- __fase final__: um único modelo definitivo foi treinado com a totalidade dos dados utilizando a configuração de treinamento selecionada anteriormente. Além disso, o modelo definitivo foi comparado com a _baseline_.
 
-Além disso, cada fase utilizou um conjunto de dados diferente:
-
-- [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset): composto por 30% dos dados levantados (282 imagens e 560 anotações)
-- [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/total_dataset): composto pela totalidade dos dados levantados (940 imagens e 1.836 anotações)
-
-A relação entre os dois conjuntos pode ser visualizada no diagrama abaixo:
-
-![Conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7a)
-
-Durante a fase preliminar, foram experimentadas diferentes configurações de treinamento utilizando o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset). Nesse contexto, a configuração que mais se destacou foi a seguinte:
+A configuração de treinamento selecionada para treinar tanto a _baseline_, quanto o modelo definitivo pode ser visualizada na tabela abaixo:
 
 |  Hiperparâmetros                          | Valores                  |
 |-------------------------------------------|--------------------------|
