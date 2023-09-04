@@ -5,18 +5,23 @@
 
 Pássaros atraem a atenção humana por sua beleza e diversidade, o que estimula pessoas a obsersarvá-los como lazer. Nesse processo, é possível registrar pássaros em imagens e compartilhá-las em plataformas de ciência cidadã como [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Com isso, pessoas podem contribuir significativamente com pesquisas científicas que visam compreender e preservar espécies de pássaros. 
 
-A região amazônica pode oferecer uma excelente experiência de observação de pássaros dada a diversidade de espécies existentes. Algumas delas se adaptaram inclusive ao meio urbano, sendo possível encontrar pássaros se alimentando até nos jardins de residências. Dessa forma, os moradores locais podem observar pássaros ao atraí-los por meio de alimentos colocados em comedouros abertos.
+A região amazônica pode oferecer uma excelente experiência de observação de pássaros dada a diversidade de espécies existentes. Algumas delas se adaptaram inclusive ao meio urbano, sendo possível encontrar pássaros se alimentando até mesmo nos jardins de residências. Dessa forma, os moradores locais podem observar pássaros ao atraí-los por meio de alimentos colocados em comedouros abertos.
 
 Nesse conexto, notou-se a oportunidade de empregar _webcams_ para registrar pássaros amazônicos se alimentando em comedouros residenciais. Além disso, questionou-se se não seria possível empregar inteligência artificial, através de modelos de Deep Learning, para detectar automaticamente as espécies dos pássaros registrados. 
 
+Por meio deste projeto, foi possível responder a essa questão ao desenvolver um modelo de Deep Learnig capaz de detectar 5 espécies de pássaros amazônicos que frequentam comedouros residenciais. A aplicação do modelo é demonstrada no vídeo abaixo.
+
+https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/7eede525-d633-4972-8065-a0ed4a6c1abe
+
+
+
 # Objetivos
 
-Assim, esse projeto teve como objetivo geral levantar uma abordagem baseada em Deep Learning para detectar automaticamente espécies de pássaros amazônicos a partir de um contexto residencial. Para tanto, 
+ O objetivo geral deste projeto foi o de levantar uma abordagem baseada em Deep Learning para detectar automaticamente espécies de pássaros amazônicos a partir de um contexto residencial. Para tanto, foram definidos os seguintes objetivos específicos: 
 
 - Levantar um conjunto de imagens de pássaros que frequentam um comedouro residencial;
 - Anotar as imagens levantadas para a tarefa de detecção de objetos;
 - Treinar e avaliar modelos de Deep Learning em diferentes configurações para detectar as espécies desses pássaros; 
-- Avaliar os modelos, selecionando o que mais se destacasse;
   
 # Proposta 
 
@@ -26,7 +31,7 @@ O estudo teve acesso ao comedouro de uma residência no estado do Amapá que pod
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e" alt="comedouro" height=60% width=60%>
 
-No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações foi realizada por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
+No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando conforme esquematizado na figura abaixo. A captura das gravações foi realizada por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="esquema_gravacao" height=60% width=60%>
 
@@ -42,7 +47,7 @@ As imagens adquiridas foram anotadas por meio da plataforma [RoboFlow](https://r
 
 ## Treinamento 
 
-Entre os algoritmos de Deep Learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágios. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágios tendem a ser mais precisos. Por essa razão, foi decidido utilizar o Faster R-CNN neste trabalho. 
+Entre os algoritmos de Deep Learning voltados para a detecção de objetos, é possível encontrar o [Faster R-CNN](https://arxiv.org/abs/1506.01497) que recai na categoria de detectores de dois estágios. Nessa categoria, o modelo primeiro propõe regiões com possíveis objetos denominadas de RoI (Region of Interest). Em seguida, ele utiliza essas regiões para realizar as detecções. Em geral, detectores de dois estágios tendem a ser mais precisos. Por essa razão, foi decidido utilizar o Faster R-CNN.
 
 Neste trabalho, houve duas fases consecutivas de treinamento denominadas respectivamente de:
 
@@ -59,19 +64,21 @@ O treinamento foi conduzido por meio do _framework_ [IceVision](https://github.c
 | Taxa de aprendizagem                      | 10-4                     |
 | Tamanho do batch                          | 1                        |
 | Tamanho da imagem                         | 896x896                  |
-| Tamanho de redimensionamento no presizing | 1024x1024                |
+| Tamanho de redimensionamento no _presizing_ | 1024x1024                |
 
 
-A avaliação foi conduzida pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando as três métricas de _mean Average Precision_ (mAP) definidas pelos critérios de avaliação do conjunto [COCO](https://cocodataset.org/#detection-eval). Dessa forma, os resultados alcançados tanto pela _baselie_, quanto pelo modelo definitivo podem ser visualizados na tabela abaixo. 
+A avaliação foi conduzida pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando as três métricas de _mean Average Precision_ (mAP) definidas pelos critérios de avaliação do conjunto [COCO](https://cocodataset.org/#detection-eval). A 
+
+Dessa forma, os resultados alcançados tanto pela _baselie_, quanto pelo modelo definitivo podem ser visualizados na tabela abaixo. 
 
 |       Modelo      |    mAP  | mAP@.50  | mAP@.75  |
 |:-----------------:|:-------:|:--------:|:--------:|
 | Baseline          | 0,7529  | 0,9459   | 0,8851   |
 | Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
 
-Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%. Vale destacar também que ao se considerar o _threshold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
+Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%, ao sair de 75,29% para 81,89%. Vale destacar também que, ao se considerar o _threshold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
 
-Além da mAP, foram utilizadas as métricas de precisão e de revocação a fim de verificar a performance dos modelos em relação a cada espécies considerando-se o _threshold_ de IoU em 50%. Os resultados podemo ser visualizados na tabela abaixo. 
+Além da mAP, foram utilizadas as métricas de precisão e de revocação a fim de verificar a performance dos modelos em relação a cada espécie considerando-se o _threshold_ de IoU em 50%. Os resultados podem ser visualizados na tabela abaixo. 
 
 
 | Espécies             	| Precisão Baseline 	| Precisão Modelo Definitivo  	| Revocação Baseline  	| Revocação Modelo Definitivo  	|
@@ -99,17 +106,17 @@ Além disso, foi produzido um modelo Faster R-CNN treinado com esses dados a fim
 Diante disso, nota-se a oportunidade de trabalhos futuros:
 
 - Como proposta de curto prazo, mais imagens serão extraídas e anotadas a partir das gravações já existentes. O modelo produzido anotará parcialmente as imagens a fim de reduzir o trabalho humano.
-- Como porposta de média prazo, será levantado um novo conjunto de imagens extraídas a partir de _webscrapping_. Como requisito, as imagens deverão conter pássaros de uma única espécie em destaque. Aqui,levanta-se como hipótese que pré-treinar os modelos com essas imagens irá ajudá-los a aprender características mais ricas das espécies do que se forem treinados diretamente e apenas com imagens obtidas a partir _webcams_. 
+- Como porposta de média prazo, será levantado um novo conjunto de imagens extraídas a partir de _webscrapping_. Como requisito, as imagens deverão conter pássaros de uma única espécie em destaque. Aqui, levanta-se como hipótese que pré-treinar os modelos com essas imagens irá ajudá-los a aprender características mais ricas das espécies do que se forem treinados diretamente e apenas com imagens obtidas a partir _webcams_. 
 - Como proposta de longo prazo, será desenvolvido o protótipo de um sistema capaz de coletar novas imagens em outras residências. Para tanto, imagina-se confecionar um comedouro em proporções menores, além de empregar a placa Raspberry PI 4 conectada a uma câmera para registrar os pássaros. Além disso, imagina-se estudar a viabilidade de realizar as inferências localmente em uma abordagem de computação na borda.  
 
 # Estrutura do Projeto
 
 A raíz do projeto contem as seguintes pastas: 
 
-
-__dataset__: onde se encontra os conjuntos de dados. 
-__c
-
+- __codigo_de_desenvolvimendo__: pasta onde se encontra todos os _notebooks_ e demais implementações do projeto.
+- __dataset__: pasta onde se encontra os conjuntos de dados. 
+- __faster_rcnn__: pasta onde se encontra os _checkpoints_ dos modelos. Infelizemtne, devido a limitação de armazenamento, o conteúdo completo está disponível apenas [no repositório completo compartilhado pelo Google Drive](no repositório completo compartilhado pelo Google Drive).
+- __streamlit_app__: pasta onde se encontra a implementação da aplicação de extração dos frames desenvolvida em Streamlit.
 
 
 
