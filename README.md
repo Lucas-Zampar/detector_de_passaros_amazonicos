@@ -52,7 +52,7 @@ Neste trabalho, houve duas fases consecutivas de treinamento denominadas respect
 - __fase preliminar__: modelos foram treinados com uma porção menor de dados em diferentes configurações. Nesta fase, foi selecionada a configuração de treinamento do modelo que apresentou os melhores resultados. Esse modelo foi definido também como uma _baseline_. 
 - __fase final__: um único modelo definitivo foi treinado com a totalidade dos dados utilizando a configuração de treinamento selecionada anteriormente. Além disso, o modelo definitivo foi comparado com a _baseline_.
 
-A configuração de treinamento selecionada para treinar tanto a _baseline_, quanto o modelo definitivo pode ser visualizada na tabela abaixo:
+O treinamento foi conduzido por meio do _framework_ [IceVision](https://github.com/airctic/icevision) que utiliza os modelos disponibilizados pelo [MMDetection](https://github.com/open-mmlab/mmdetection). A configuração selecionada para treinar tanto a _baseline_, quanto o modelo definitivo pode ser visualizada na tabela abaixo.
 
 |  Hiperparâmetros                          | Valores                  |
 |-------------------------------------------|--------------------------|
@@ -64,15 +64,13 @@ A configuração de treinamento selecionada para treinar tanto a _baseline_, qua
 | Tamanho da imagem                         | 896x896                  |
 | Tamanho de redimensionamento no presizing | 1024x1024                |
 
-A partir disso, foi decido utilizar essa configuração para realizar o treinamento de dois modelos. O primeiro foi treinado com o [conjunto parcial](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/partial_dataset) a fim de definr uma _baseline_. Já o segundo, chamado de __definitivo__, foi treinado com [conjunto total](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/92e0beb9-9af2-4a06-9116-7a079b910e7). A avaliação dos modelos foi realizada pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando a métrica _mean Average Precision_ (mAP) conforme calculada pelo conjunto [COCO](https://cocodataset.org/#detection-eval).
 
-A tabela abaixo compara os resultados alcançados pelos dois modelos:
+A avaliação foi conduzida pelo _framework_ [FiftyOne](https://github.com/voxel51/fiftyone) utilizando as três métricas de _mean Average Precision_ (mAP) definidas pelos critérios de avaliação do conjunto [COCO](https://cocodataset.org/#detection-eval). Dessa forma, os resultados alcançados tanto pela _baselie_, quanto pelo modelo definitivo podem ser visualizados na tabela abaixo. 
 
 |       Modelo      |    mAP  | mAP@.50  | mAP@.75  |
 |:-----------------:|:-------:|:--------:|:--------:|
 | Baseline          | 0,7529  | 0,9459   | 0,8851   |
 | Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
 
-Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8.77%. Vale destacar que as demais métricas mAP@.50 e mAP@.75, que utilizam os _thresholds_ de IoU em 50% e 75% respectivamente, foram utilizadas como referência apenas. 
-
+Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%. Vale destacar também que ao se considerar o _thresold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
 
