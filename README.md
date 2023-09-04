@@ -69,30 +69,50 @@ A avaliação foi conduzida pelo _framework_ [FiftyOne](https://github.com/voxel
 | Baseline          | 0,7529  | 0,9459   | 0,8851   |
 | Modelo Definitivo | 0,8189  | 0,9833   | 0,9572   |
 
-Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%. Vale destacar também que ao se considerar o _thresold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
+Nota-se que o fornecimento de mais dados de treinamento beneficiou o modelo definitivo já que a mAP registrou um crescimento percentual de 8,77%. Vale destacar também que ao se considerar o _threshold_ de _Intersection over Union_ (IoU) em 50% apenas, a mAP alcançada pelo modelo definitivo foi de 98,33%. 
+
+Além da mAP, foram utilizadas as métricas de precisão e de revocação a fim de verificar a performance dos modelos em relação a cada espécies considerando-se o _threshold_ de IoU em 50%. Os resultados podemo ser visualizados na tabela abaixo. 
 
 
+| Espécies             	| Precisão Baseline 	| Precisão Modelo Definitivo  	| Revocação Baseline  	| Revocação Modelo Definitivo  	|
+|----------------------	|-------------------	|-----------------------------	|---------------------	|------------------------------	|
+| canário-do-amazonas  	|  0,9344           	| 0,9515                      	| 0,9828              	| 0,9849                       	|
+| chupim               	|  0,9000           	| 0,9725                      	| 0,9231              	| 1,0000                       	|
+| rolinha              	|  0,9643           	| 0,9663                      	| 1,0000              	| 0,9773                       	|
+| sanhaço-da-amazônia  	|  0,8519           	| 0,9877                      	| 1,0000              	| 1,0000                       	|
+| sanhaço-do-coqueiro  	|  0,8462           	| 0,9200                      	| 0,8800              	| 0,9787                       	|
+| __Média__                	|  __0,8993__           	| __0,9596__                      	| __0,9572__              	| __0,9882__                       	|
 
-|       Espécies       | Precisão Baseline | Precisão Modelo Definitivo  | Revocação Baseline  | Revocação Modelo Definitivo  |
-|:--------------------:|:-----------------:|:---------------------------:|:-------------------:|:----------------------------:|
-| canário-do-amazonas  |  0,9344           | 0,9515                      | 0,9828              | 0,9849                       |
-| chupim               |  0,9000           | 0,9725                      | 0,9231              | 1,0000                       |
-| rolinha              |  0,9643           | 0,9663                      | 1,0000              | 0,9773                       |
-| sanhaço-da-amazônia  |  0,8519           | 0,9877                      | 1,0000              | 1,0000                       |
-| sanhaço-do-coqueiro  |  0,8462           | 0,9200                      | 0,8800              | 0,9787                       |
-| Média                |  0,8993           | 0,9596                      | 0,9572              | 0,9882                       |
 
+Em geral, o modelo definitivo apresentou um ganho percentual de precisão média de 6,7% em comparação com a baseline, ao passar de 89,93% para 95,96%. Já a revocação média teve um crescimento percentual menor de 3,24% saindo de 95,72% para 98,82%. 
 
 
 # Conclusão 
 
+Por meio deste trabalho, foi possível levantar um conjunto contendo 940 imagens de pássaros amazônicos se alimentnado em um comedouro residencial e 1.836 anotações no formato Pascal VOC distribuídas entre as 5 espécies desses pássaros (canário-do-amazonas, chupim, rolinha, sanhaço-da-amazônia e sanhaço-do-coqueiro). O conjunto de dados levantado está [disponível publicamente](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset/total_dataset). 
 
-
+Além disso, foi produzido um modelo Faster R-CNN treinado com esses dados a fim de detectar automaticamente as espécies dos pássaros. O modelo alcançou mAP de 98,33% ao se considerar o _threshold_ de IoU em 50%. Além disso, a precisão média e revocação média do modelo foi de 95,96% e 98,82% respectivamente. 
+ 
 
 # Próximos Passos 
 
+Diante disso, nota-se a oportunidade de trabalhos futuros:
+
+- Como proposta de curto prazo, mais imagens serão extraídas e anotadas a partir das gravações já existentes. O modelo produzido anotará parcialmente as imagens a fim de reduzir o trabalho humano.
+- Como porposta de média prazo, será levantado um novo conjunto de imagens extraídas a partir de _webscrapping_. Como requisito, as imagens deverão conter pássaros de uma única espécie em destaque. Aqui,levanta-se como hipótese que pré-treinar os modelos com essas imagens irá ajudá-los a aprender características mais ricas das espécies do que se forem treinados diretamente e apenas com imagens obtidas a partir _webcams_. 
+- Como proposta de longo prazo, será desenvolvido o protótipo de um sistema capaz de coletar novas imagens em outras residências. Para tanto, imagina-se confecionar um comedouro em proporções menores, além de empregar a placa Raspberry PI 4 conectada a uma câmera para registrar os pássaros. Além disso, imagina-se estudar a viabilidade de realizar as inferências localmente em uma abordagem de computação na borda.  
 
 # Estrutura do Projeto
+
+A raíz do projeto contem as seguintes pastas: 
+
+
+__dataset__: onde se encontra os conjuntos de dados. 
+__c
+
+
+
+
 
 
 
