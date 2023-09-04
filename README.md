@@ -27,7 +27,7 @@ O estudo teve acesso ao comedouro de uma residência no estado do Amapá que pod
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/a0c60cdd-c422-49c0-9599-b37959cf570e" alt="comedouro" height=60% width=60%>
 
-No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações era feita por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
+No comedouro, foram instaladas três _webcams_ Logitech C270 HD conectadas a um notebook a fim de gravar os pássaros se alimentando, conforme colocado na figura abaixo. A captura das gravações foi realizada por meio de um [script com auxílio da biblioteca OpenCV](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/blob/main/dataset/dataset_utils/script_opencv.py).
 
 <img src="https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/1304c715-bcda-47d3-848e-c604306c0b06" alt="comedouro" height=60% width=60%>
 
@@ -35,14 +35,11 @@ As imagens do conjunto de dados foram obtidas a partir de _frames_ extraídos de
 
 https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f92f70fb-00c9-42a9-be28-88ab50c10324
 
-Após serem extraídos, os _frames_ foram carregados na plataforma [RoboFlow](https://roboflow.com/) para serem anotados, processo que se consistiu em especificar as _bounding boxes_ e classes (espécies) de cada pássaro. 
+As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home), além de utilizar manuais de referência. Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de __canário-do-amazonas__, __chupim__, __rolinha__, __sanhaço-do-coqueiro__ e __sanhaço-da-amazônia__.
 
 
+Uma vez extraídos, os _frames_ foram anotados por meio da plataforma [RoboFlow](https://roboflow.com/). Ao todo, foram levantadas 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada no gráfico abaixo. O conjunto de dados produzido pode ser encontrado na pasta [dataset](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset). 
 
-
-As espécies dos pássaros foram determinadas por meio de consultas realizadas nas plataformas de ciência cidadã [WikiAves](https://www.wikiaves.com.br/) e [eBird](https://ebird.org/home). Assim, foi possível identificar cinco espécies conhecidas popularmente pelos nomes de canário-do-amazonas, chupim, rolinha, sanhaço-do-coqueiro e sanhaço-da-amazônia. Com isso, foi possível levantar e disponibilizar publicamente um [conjnunto de dados](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/tree/main/dataset) composto por 940 imagens e 1.836 anotações no formato Pascal VOC. A distribuição das anotações por espécie pode ser visualizada abaixo:
-
-![total_proportion](https://github.com/Lucas-Zampar/detector_de_passaros_amazonicos/assets/75434421/f42e5a3e-6c5f-43f4-a7ac-c95327cf5c6d)
 
 ## Treinamento 
 
